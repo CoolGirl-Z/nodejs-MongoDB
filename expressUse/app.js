@@ -12,6 +12,8 @@ app.get('/register', function(req, res) {
 });
 // get主要用于显示数据
 app.get('/article', function(req, res) {
+    let query = req.query;
+    console.log(query);
     res.send("文章页面");
 });
 // post主要用于增加数据
@@ -34,9 +36,6 @@ app.get('/login/auth', function(req, res) {
     res.send("登录验证");
 });
 //3.2.3 动态路由配置
-app.get('/article', function(req, res) {
-    res.send("文章");
-});
 //article路由后面可以传入任意值
 app.get('/article/:id', function(req, res) {
     //获取动态路由：id

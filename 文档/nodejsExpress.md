@@ -19,6 +19,7 @@ npm install express --save
 var express= require("express");
 var app = new express();
 
+//3.2配置路由。配置路由需要注意顺序，动态路由需要放在后面
 //3.2.1 配置路由
 app.get("/,function(req,res){
 	res.send("hello world");
@@ -44,4 +45,14 @@ app.get('/article/:id', function(req, res) {
 //3.3监听端口
 app.listen(3000,"127.0.0.1");
 ```
-4. 
+4. 获取get传值`req.query`
+```js
+app.get('/product', function(req, res) {
+let query = req.query;
+console.log(query);
+    res.send("product");
+});
+```
+
+## Express路由，ejs，静态文件托管
+
