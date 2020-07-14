@@ -1,11 +1,30 @@
 const express = require('express');
 const app = new express();
+// express使用ejs
+/* 
+1.安装 npm install ejs --save
+2.配置模板引擎  app.set("view engine","ejs")
+3.使用   res.render("index",{})//默认加载模板引擎文件是views
+*/
+app.set("view engine", "ejs");
+
 
 app.get('/', function(req, res) {
-    res.send('Hello World');
+    var title = "你好ejs"
+    res.render("index", { title: title });
 });
-app.get('/login', function(req, res) {
-    res.send("登录页面");
+app.get('/news', function(req, res) {
+    var userInfo = {
+        username: "zs",
+        age: 20
+    }
+    var article = "<h3>我是一个H3</h3>";
+    res.render("news", {
+        userInfo: userInfo,
+        article: article,
+        flag: true,
+        score: 50
+    });
 });
 app.get('/register', function(req, res) {
     res.send("注册页面");

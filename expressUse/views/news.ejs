@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻页面</title>
+</head>
+
+<body>
+    <!-- 绑定数据 -->
+    <div>
+        <%=userInfo.username%>
+    </div>
+    <div>
+        <%=userInfo.age%>
+    </div>
+    <!-- 渲染html标签 -->
+    <div>
+        <%-article%>
+    </div>
+
+    <!-- 条件判断 -->
+    <div>
+        <%if(flag==true){%>
+            <strong>flag = true</strong>
+            <%}%>
+    </div>
+    <div>
+        <%if(score > 60){%>
+            <strong>及格了</strong>
+            <%}else{%>
+                <strong>不及格</strong>
+                <%}%>
+    </div>
+</body>
+
+</html>
